@@ -1,9 +1,7 @@
 import React from 'react';
 import LoginComponent from './Login';
-import InboxComponent from './Inbox'
+import DashboardComponent from './Dashboard'
 import './App.css';
-const API_URL = 'http://127.0.0.1:8000'
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzI…N6l1xHvKxET2NX_xLrVh-tNKJYD4XnZGjnxVait9zUY8iDYyU'
 
 
 class App extends React.Component {
@@ -24,11 +22,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.data);
+    // console.log(this.state.data);
     if (!this.state.data) {
-
-
-
 
       return (
 
@@ -55,7 +50,7 @@ class App extends React.Component {
 
       return(
 
-        <InboxComponent />
+        <DashboardComponent apitoken = {this.state.data.token}  />
 
       );
     }

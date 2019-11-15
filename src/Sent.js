@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-class InboxComponent extends React.Component {
+class SentComponent extends React.Component {
 
     constructor(props) {
         super(props)
@@ -22,7 +22,7 @@ class InboxComponent extends React.Component {
         // console.log('Bearer ' + this.props.apitoken.token);
         axios({
             method: 'get',
-            url: 'http://127.0.0.1:8000/api/inbox/1',
+            url: 'http://127.0.0.1:8000/api/sent/1',
             headers: {
                 Authorization: 'Bearer ' + this.props.apitoken,
             },
@@ -39,13 +39,13 @@ class InboxComponent extends React.Component {
 
     render() {
 
-    // console.log(this.state.emailArr);
+    console.log(this.state.emailArr);
         const mappedemails = this.state.emailArr.map((item) => {
             return (
                 <React.Fragment>
                     <tr>
                         <th scope="row">1</th>
-                        <td>{item.sender[0].user.name}</td>               
+                        <td>{item.receiver[0].user.name}</td>               
                         <td>{item.emails.subject}</td>
                         <td>{item.emails.created_at}</td>
                     </tr>
@@ -61,7 +61,7 @@ class InboxComponent extends React.Component {
                 <table className="table table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">Inbox</th>
+                            <th scope="col">Sent</th>
                             <th scope="col">From</th>
                             <th scope="col">Subject</th>
                             <th scope="col">Date</th>
@@ -70,7 +70,7 @@ class InboxComponent extends React.Component {
                     <tbody>
                         
                             {mappedemails}
-                  
+           
                     </tbody>
                 </table>
 
@@ -84,4 +84,4 @@ class InboxComponent extends React.Component {
 }
 
 
-export default InboxComponent;
+export default SentComponent;
