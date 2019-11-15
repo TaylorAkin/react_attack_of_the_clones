@@ -22,7 +22,7 @@ class InboxComponent extends React.Component {
         // console.log('Bearer ' + this.props.apitoken.token);
         axios({
             method: 'get',
-            url: 'http://127.0.0.1:8000/api/inbox/1',
+            url: 'http://127.0.0.1:8000/api/inbox/' + this.props.user.id,
             headers: {
                 Authorization: 'Bearer ' + this.props.apitoken,
             },

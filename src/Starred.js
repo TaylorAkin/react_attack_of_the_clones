@@ -22,7 +22,7 @@ class StarredComponent extends React.Component {
         // console.log('Bearer ' + this.props.apitoken.token);
         axios({
             method: 'get',
-            url: 'http://127.0.0.1:8000/api/starred/1',
+            url: 'http://127.0.0.1:8000/api/starred/' + this.props.user.id,
             headers: {
                 Authorization: 'Bearer ' + this.props.apitoken,
             },
@@ -40,6 +40,9 @@ class StarredComponent extends React.Component {
     render() {
 
     console.log(this.state.emailArr);
+
+    if(this.state.emailArr){
+
         const mappedemails = this.state.emailArr.map((item) => {
             return (
                 <React.Fragment>
@@ -78,6 +81,8 @@ class StarredComponent extends React.Component {
 
 
         );
+
+    }
 
 
     }

@@ -20,8 +20,8 @@ class LoginComponent extends React.Component {
         axios.post('http://127.0.0.1:8000/api/login' , {email: this.state.email , password:this.state.password})
           .then(response => { const data = response.data; 
             this.setState({ data : data});
-            // console.log(this.state.data)
-            this.props.token(this.state.data)
+            console.log(this.state.data)
+            this.props.token(this.state.data);
           });
           e.preventDefault();
 

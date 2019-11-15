@@ -22,10 +22,10 @@ render(){
 
     <React.Fragment>
 
-        <InboxComponent apitoken = {this.props.apitoken}/>
-        <SentComponent apitoken = {this.props.apitoken}/>
-        <StarredComponent apitoken = {this.props.apitoken}/>
-        <LogoutComponent apitoken = {this.props.apitoken} />
+        <InboxComponent apitoken = {this.props.apitoken} user = {this.props.user}/>
+        <SentComponent apitoken = {this.props.apitoken} user = {this.props.user}/>
+        <StarredComponent apitoken = {this.props.apitoken} user = {this.props.user}/>
+        <LogoutComponent apitoken = {this.props.apitoken} user = {this.props.user}/>
 
     </React.Fragment>
 

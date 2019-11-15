@@ -31,16 +31,9 @@ class App extends React.Component {
           <header className="App-header">
 
 
-            <LoginComponent token={this.getTokenfromChildComponent} />
+            <LoginComponent token={this.getTokenfromChildComponent} user = {this}/>
 
-            {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+    
           </header>
 
         </div>
@@ -48,9 +41,9 @@ class App extends React.Component {
 
     } else{
 
+      console.log(this.state.data.user);
       return(
-
-        <DashboardComponent apitoken = {this.state.data.token}  />
+        <DashboardComponent apitoken = {this.state.data.token} user = {this.state.data.user} />
 
       );
     }
